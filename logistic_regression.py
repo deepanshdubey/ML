@@ -14,18 +14,18 @@ print(iris['target'])
 print(iris['DESCR'])
 
 #model fitting
-X = iris["data"][:, 3:]
-Y = (iris["target"] == 2).astype(np.int32)
+X = iris["data"][:, 2:]
+Y = (iris["target"] == 3).astype(np.int32)
 
 #model training
 clf = LogisticRegression()
 clf.fit(X, Y)
-pred = clf.predict(([[1.3232]]))
+pred = clf.predict(([[2.2567]]))
 print(pred)
 
 #using matplotlib to visualise
 
-X_new = np.linspace(0, 3, 1000).reshape(-1, 1)
+X_new = np.linspace(0, 2, 1000).reshape(-1, 1)
 print(X_new)
 y_prob = clf.predict_proba(X_new)
 print(y_prob)
